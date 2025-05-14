@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import AuthLayout from '../layouts/AuthLayout';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import Checkbox from '../components/Checkbox';
+import registrationIcon from '../assets/registrationIcon.svg'; // Assuming you have an icon for registration
 
 const Register: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -23,15 +23,13 @@ const Register: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Register attempt', formData);
-    // Handle registration logic here
   };
 
   return (
     <AuthLayout 
       title="PROJECT" 
       subtitle="Регистрация"
-      characterPosition="left"
+      characterIcon={registrationIcon}
     >
       <div className="text-center mb-6">
         <p className="text-gray-300 text-sm">

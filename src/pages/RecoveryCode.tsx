@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import AuthLayout from '../layouts/AuthLayout';
 import Input from '../components/Input';
 import Button from '../components/Button';
+import recoveryCodeIcon from '../assets/recoveryCodeIcon.svg'; // Assuming you have an icon for recovery
 
 const RecoveryCode: React.FC = () => {
   const [code, setCode] = useState('example@gmail.com');
@@ -21,7 +22,7 @@ const RecoveryCode: React.FC = () => {
     <AuthLayout 
       title="PROJECT" 
       subtitle="Восстановление доступа"
-      characterPosition="left"
+      characterIcon={recoveryCodeIcon}
     >
       <div className="mb-6">
         <p className="text-gray-300 text-sm text-center">
