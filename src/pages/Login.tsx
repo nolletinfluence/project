@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import AuthLayout from '../layouts/AuthLayout';
 import Input from '../components/Input/Input';
 import Button from '../components/Button/Button';
-import loginIcon from '../assets/loginIcon.svg';
+import LoginIcon from '../assets/loginBack.svg'
 
 const Login: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +25,7 @@ const Login: React.FC = () => {
     <AuthLayout
       title="PROJECT"
       subtitle="Авторизация в аккаунте"
-      characterIcon={loginIcon}
+      backgroundImage={LoginIcon}
     >
       <form onSubmit={handleSubmit}>
         <Input

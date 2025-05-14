@@ -1,7 +1,10 @@
 .container {
-width: 100%;
-height: 100dvh;
-display: flex;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .content {
@@ -12,129 +15,10 @@ display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-}
-
-.background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
-  background-color: #1a1a1a;
-  background-image: url(../src/assets/background.svg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 10;
-}
-
-.splatter {
-  position: absolute;
-  inset: 0;
-  z-index: 20;
-}
-
-.gunWrapper {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 50;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.gunDecorationWrapper {
-  position: absolute;
-  bottom: -10%;
-  left: 15%;
-  width: 64px;
-  height: 64px;
-  pointer-events: none;
-}
-
-.gunDecoration {
-  z-index: 100;
-  width: 100%;
-  height: 100%;
-  background-color: #000; 
-  border-radius: 50%;
-  border: 250px solid #000; 
-  opacity: 0.6;
-  box-shadow: 500px rgba(0, 0, 0, 1); 
-}
-
-.gunLeft {
-  position: absolute;
-  bottom: -18%;
-  left: 0;
-  z-index: 50;
-  width: 806px;
-  height: 695px;
-  background-image: url(../src/assets/gunleft.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  max-height: 100vh;
-  background-position: center;
-}
-
-.gunWrapperRight {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 50;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.gunDecorationWrapperRight {
-  position: absolute;
-  top: 10%;
-  right: 10%;
-  width: 64px;
-  height: 64px;
-  pointer-events: none;
-}
-
-.gunRight {
-  position: absolute;
-  top: 5px;
-  right: -8%;
-  z-index: 50;
-  width: 806px;
-  height: 695px;
-  background-image: url(../src/assets/gunright.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.leftSection {
-  display: flex;
-  overflow: hidden;
-}
-
-.characterWrapper {
-  position: relative;
-  width: 737px;
-  max-height: 900px;
-}
-
-.character {
-  width: 737px;
-  height: 900px;
+  display: none;
 }
 
 .rightSection {
-  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;

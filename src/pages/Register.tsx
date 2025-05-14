@@ -3,7 +3,7 @@ import AuthLayout from '../layouts/AuthLayout';
 import Input from '../components/Input/Input';
 import Button from '../components/Button/Button';
 import Checkbox from '../components/Checkbox/Checkbox';
-import registrationIcon from '../assets/registrationIcon.svg'; // Assuming you have an icon for registration
+import RegistrationIcon from '../assets/registrationBack.svg';
 
 const Register: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -29,7 +29,7 @@ const Register: React.FC = () => {
     <AuthLayout 
       title="PROJECT" 
       subtitle="Регистрация"
-      characterIcon={registrationIcon}
+      backgroundImage={RegistrationIcon}
     >
       <div className="text-center mb-6">
         <p className="text-gray-300 text-sm">
