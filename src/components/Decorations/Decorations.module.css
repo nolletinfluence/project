@@ -9,13 +9,17 @@
 
 /* Декорация пистолета */
 .gunDecoration {
-  opacity: 0.7;
+  position: absolute;
+  top: 50%;
+  left: 50%; /* Чтобы центрировать по оси X и Y */
+  transform: translate(-50%, -50%); /* Центрирует элемент */
+  opacity: 1; /* Убираем прозрачность */
   width: 64px;
   height: 64px;
-  background-color: rgba(45, 55, 72, 0.3); /* полупрозрачный темный фон */
-  border-radius: 50%;
-  backdrop-filter: blur(10px); /* размытие фона */
-  border: 1px solid rgba(45, 55, 72, 0.3);
+  background-color: #000; /* Чёрный фон */
+  border-radius: 50%; /* Круглая форма */
+  border: 2px solid #000; /* Чёткая чёрная граница */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Тень для более выразительного эффекта */
 }
 
 /* Сплэттер-эффект */
