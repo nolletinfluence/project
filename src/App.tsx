@@ -9,7 +9,7 @@ import RecoveryCode from './pages/RecoveryCode';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-900 text-white">
+      <div className="text-white">
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

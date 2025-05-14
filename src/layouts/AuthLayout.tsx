@@ -28,7 +28,9 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ title, subtitle, children, char
       />
 
       {/* Пистолет в левом нижнем углу */}
-      {/* <div className={styles.gunLeft} /> */}
+      <div className={styles.gunWrapper}>
+      <div className={styles.gunLeft} />
+      </div>
 
       {/* Пистолет в правом верхнем углу */}
       {/* <div className={styles.gunRight} /> */}
@@ -48,16 +50,18 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ title, subtitle, children, char
 
         {/* Правая секция — форма */}
         <div className={styles.rightSection}>
-          <p className={styles.subtitle}>{subtitle}</p>
-          <h1 className={styles.title}>{title}</h1>
-          <div className="w-full max-w-md relative mt-8">
-            {children}
-            {/* Декоративные ромбы — привязаны к форме */}
-            <DiamondDecoration className={styles.diamondDecoration} />
-            <DiamondDecoration className={styles.diamondDecorationRightTop} />
-            <DiamondDecoration className={styles.diamondDecorationLeftBottom} />
-            <DiamondDecoration className={styles.diamondDecorationRightBottom} />
+          <div className={styles.logoWrapper}>
+              <p className={styles.subtitle}>{subtitle}</p>
+              <h1 className={styles.title}>{title}</h1>
+              <div className="w-full max-w-md relative mt-8">
+              {children}
+              <DiamondDecoration className={styles.diamondDecoration} />
+              <DiamondDecoration className={styles.diamondDecorationRightTop} />
+              <DiamondDecoration className={styles.diamondDecorationLeftBottom} />
+              <DiamondDecoration className={styles.diamondDecorationRightBottom} />
           </div>
+          </div>
+
         </div>
       </div>
     </div>
