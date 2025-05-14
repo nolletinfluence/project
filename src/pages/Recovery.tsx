@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthLayout from '../layouts/AuthLayout';
-import Input from '../components/Input';
-import Button from '../components/Button';
+import Input from '../components/Input/Input';
+import Button from '../components/Button/Button';
 import recoveryIcon from '../assets/recoveryIcon.svg';
 
 const Recovery: React.FC = () => {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import AuthLayout from '../layouts/AuthLayout';
-import Input from '../components/Input';
-import Button from '../components/Button';
-import Checkbox from '../components/Checkbox';
+import Input from '../components/Input/Input';
+import Button from '../components/Button/Button';
+import Checkbox from '../components/Checkbox/Checkbox';
 import registrationIcon from '../assets/registrationIcon.svg'; // Assuming you have an icon for registration
 
 const Register: React.FC = () => {

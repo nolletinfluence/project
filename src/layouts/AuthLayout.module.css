@@ -1,0 +1,135 @@
+.container {
+width: 100%;
+height: 100dvh;
+display: flex;
+}
+
+.content {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background-color: #1a1a1a;
+  background-image: url(../src/assets/background.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.splatter {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+}
+
+.gunLeft {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  width: 806px;
+  height: 695px;
+  background-image: url(../src/assets/gunleft.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.gunRight {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 30;
+  width: 806px;
+  height: 695px;
+  background-image: url(../src/assets/gunright.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.7;
+}
+
+.leftSection {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.characterWrapper {
+  position: relative;
+  width: 50%;
+  height: 50%;
+}
+
+.character {
+  width: 737px;
+  height: 900px;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.rightSection {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.title {
+  font-size: 3rem;
+  color: #e53e3e;
+  font-weight: bold;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #cbd5e0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.diamondDecoration {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+}
+
+.diamondDecorationRightTop {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+}
+
+.diamondDecorationLeftBottom {
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+}
+
+.diamondDecorationRightBottom {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+}

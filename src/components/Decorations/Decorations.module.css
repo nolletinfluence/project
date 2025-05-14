@@ -1,0 +1,43 @@
+/* Декорация ромба */
+.diamondDecoration {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #2d3748; /* серый цвет */
+  background-color: #2d3748; /* темный фон */
+  transform: rotate(45deg);
+}
+
+/* Декорация пистолета */
+.gunDecoration {
+  opacity: 0.7;
+  width: 64px;
+  height: 64px;
+  background-color: rgba(45, 55, 72, 0.3); /* полупрозрачный темный фон */
+  border-radius: 50%;
+  backdrop-filter: blur(10px); /* размытие фона */
+  border: 1px solid rgba(45, 55, 72, 0.3);
+}
+
+/* Сплэттер-эффект */
+.splatterOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.splatterOverlayBackground {
+  position: absolute;
+  inset: 0;
+  background-image: url(../src/assets/spray.svg);
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.splatterOverlayDark {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* полупрозрачный черный */
+  z-index: 10;
+}

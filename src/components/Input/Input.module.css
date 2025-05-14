@@ -1,0 +1,59 @@
+/* Обертка для инпута */
+.inputWrapper {
+  position: relative;
+  margin-bottom: 16px; /* отступ снизу */
+}
+
+/* Заголовок инпута */
+.inputLabel {
+  font-size: 0.875rem; /* размер шрифта */
+  color: #a0aec0; /* светло-серый */
+  margin-bottom: 4px; /* отступ снизу */
+}
+
+/* Кнопка подсказки */
+.infoButton {
+  color: #a0aec0;
+  transition: color 0.2s;
+}
+
+.infoButton:hover {
+  color: white;
+}
+
+/* Подсказка */
+.hint {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 10;
+  width: 256px; /* ширина подсказки */
+  padding: 12px;
+  font-size: 0.875rem;
+  background-color: #2d3748; /* темный фон */
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* тень */
+}
+
+/* Стили инпута */
+.inputField {
+  width: 100%;
+  background-color: #1a202c; /* темный фон */
+  border: 1px solid #2d3748; /* светло-серый бордер */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.inputField:focus {
+  border-color: #c53030; /* красная рамка при фокусе */
+}
+
+/* Фокусировка на инпуте */
+.inputField:focus-visible {
+  outline: 2px solid #c53030;
+}

@@ -1,57 +1,63 @@
 import React from 'react';
-import Character from '../components/Character';
-import Decorations from '../components/Decorations';
-const { SplatterOverlay } = Decorations;
+import Character from '../components/Character/Character';
+import Decorations from '../components/Decorations/Decorations';
+const { SplatterOverlay, DiamondDecoration } = Decorations;
+import styles from './AuthLayout.module.css';
 
 interface AuthLayoutProps {
   title: string;
   subtitle: string;
   children: React.ReactNode;
-  characterIcon?: string; // Пропс для иконки персонажа
+  characterIcon: string;
 }
 
 const AuthLayout: React.FC<AuthLayoutProps> = ({ title, subtitle, children, characterIcon }) => {
   return (
-    <div className="relative min-h-screen flex flex-col md:flex-row text-white overflow-hidden">
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url(../src/assets/background.svg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
-      {/* Затемнение */}
-      <div className="absolute inset-0 bg-black/70 z-10" />
+    <div className={styles.container}>
+      {/* Фон */}
+      <div className={styles.background} />
 
-      {/* Сплэттеры */}
-      <SplatterOverlay className="z-20" />
+      {/* Затемнение */}
+      <div className={styles.overlay} />
+
+      {/* Брызги */}
+      <SplatterOverlay className={`${styles.splatter}`} />
+      <SplatterOverlay
+        className={`${styles.splatter}`}
+        style={{ backgroundPosition: 'bottom right' }}
+      />
+
+      {/* Пистолет в левом нижнем углу */}
+      {/* <div className={styles.gunLeft} /> */}
+
+      {/* Пистолет в правом верхнем углу */}
+      {/* <div className={styles.gunRight} /> */}
 
       {/* Контент */}
-      <div className="relative z-30 flex flex-col md:flex-row w-full">
+      <div className={styles.content}>
         {/* Левая секция — персонаж */}
-        <div className="w-full md:w-1/2 flex justify-center items-center p-8 md:p-16">
-          {characterIcon ? (
+        <div className={styles.leftSection}>
+          <div className={styles.characterWrapper}>
             <Character
               src={characterIcon}
               alt="Character Icon"
-              className="w-[737px] h-[900px] object-contain"
+              className={styles.character}
             />
-          ) : (
-            <Character
-              src="/default-character.png"
-              alt="Default Character"
-              className="w-[400px] h-[500px] object-contain" 
-            />
-          )}
+          </div>
         </div>
 
         {/* Правая секция — форма */}
-        <div className="flex flex-col justify-center items-center w-full md:w-1/2 p-8 md:p-16">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">{title}</h1>
-          <p className="text-gray-300 text-base mb-8 text-center md:text-left">{subtitle}</p>
-          {children}
+        <div className={styles.rightSection}>
+          <p className={styles.subtitle}>{subtitle}</p>
+          <h1 className={styles.title}>{title}</h1>
+          <div className="w-full max-w-md relative mt-8">
+            {children}
+            {/* Декоративные ромбы — привязаны к форме */}
+            <DiamondDecoration className={styles.diamondDecoration} />
+            <DiamondDecoration className={styles.diamondDecorationRightTop} />
+            <DiamondDecoration className={styles.diamondDecorationLeftBottom} />
+            <DiamondDecoration className={styles.diamondDecorationRightBottom} />
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,13 @@
 import React from 'react';
-import { CheckboxProps } from '../types';
+import styles from './Checkbox.module.css';
+
+interface CheckboxProps {
+  label: string;
+  checked: boolean;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  name: string;
+  className?: string;
+}
 
 const Checkbox: React.FC<CheckboxProps> = ({
   label,
@@ -9,18 +17,20 @@ const Checkbox: React.FC<CheckboxProps> = ({
   className = '',
 }) => {
   return (
-    <label className={`flex items-center cursor-pointer ${className}`}>
-      <div className="relative">
+    <label className={`${styles.checkboxWrapper} ${className}`}>
+      <div className={styles.checkboxContainer}>
         <input
           type="checkbox"
-          className="sr-only"
+          className={styles.checkboxInput}
           checked={checked}
           onChange={onChange}
           name={name}
         />
-        <div className={`block w-5 h-5 border ${checked ? 'bg-red-700 border-red-700' : 'bg-gray-900 border-gray-700'}`}></div>
+        <div
+          className={`${styles.checkboxBox} ${checked ? styles.checkboxBoxChecked : ''}`}
+        />
         {checked && (
-          <div className="absolute top-0 left-0 flex items-center justify-center w-full h-full text-white">
+          <div className={styles.checkboxIcon}>
             <svg viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3">
               <path
                 fillRule="evenodd"
@@ -31,7 +41,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
           </div>
         )}
       </div>
-      <span className="ml-2 text-sm text-gray-400">{label}</span>
+      <span className={styles.checkboxLabel}>{label}</span>
     </label>
   );
 };

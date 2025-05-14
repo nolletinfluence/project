@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Character.module.css';
 
 interface CharacterProps {
   src: string;
@@ -8,14 +9,14 @@ interface CharacterProps {
 
 const Character: React.FC<CharacterProps> = ({ src, alt = 'Character', className = '' }) => {
   return (
-    <div className={`relative ${className}`}>
-      <div className="w-full h-full min-h-[500px] relative flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent z-10" />
-        <div className="relative z-20">
+    <div className={`${styles.characterWrapper} ${className}`}>
+      <div className={styles.characterContainer}>
+        <div className={styles.characterGradient} />
+        <div className={styles.characterImageContainer}>
           <img
             src={src}
             alt={alt}
-            className="object-contain w-full max-h-[900px]"
+            className={styles.characterImage}
           />
         </div>
       </div>
