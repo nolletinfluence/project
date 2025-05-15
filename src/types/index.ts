@@ -15,6 +15,8 @@ export type ButtonProps = {
   type?: 'button' | 'submit' | 'reset';
   variant?: 'primary' | 'secondary';
   className?: string;
+  isLoading?: boolean;
+  disabled?: boolean;
 };
 
 export type InputProps = {

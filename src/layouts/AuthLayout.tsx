@@ -28,7 +28,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ title, subtitle, children, back
             <h1 className={styles.title}>{title}</h1>
             <div className="w-full max-w-md relative mt-8">
               {children}
-              <DiamondDecoration className={styles.diamondDecoration} />
+              <DiamondDecoration className={styles.diamondDecorationLeftTop} />
               <DiamondDecoration className={styles.diamondDecorationRightTop} />
               <DiamondDecoration className={styles.diamondDecorationLeftBottom} />
               <DiamondDecoration className={styles.diamondDecorationRightBottom} />

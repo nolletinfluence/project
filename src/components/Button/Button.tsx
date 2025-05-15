@@ -8,16 +8,20 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
   variant = 'primary',
   className = '',
+  isLoading = false,
+  disabled = false,
 }) => {
-  const variantClass = styles[variant]; 
+  const variantClass = styles[variant];
+  const isDisabled = isLoading || disabled;
 
   return (
     <button
       type={type}
       onClick={onClick}
-      className={`${styles.button} ${variantClass} ${className}`}
+      className={`${styles.button} ${variantClass} ${isDisabled ? styles.disabled : ''} ${className}`}
+      disabled={isDisabled}
     >
-      {children}
+      {isLoading ? 'Загрузка...' : children}
     </button>
   );
 };

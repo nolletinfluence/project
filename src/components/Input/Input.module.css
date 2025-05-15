@@ -1,24 +1,78 @@
-/* Обертка для инпута */
 .inputWrapper {
   position: relative;
-  margin-bottom: 16px; /* отступ снизу */
+  margin-bottom: 24px;
 }
 
-/* Заголовок инпута */
+/* Заголовок плашкой */
 .inputLabel {
-  font-size: 0.875rem; /* размер шрифта */
-  color: #a0aec0; /* светло-серый */
-  margin-bottom: 4px; /* отступ снизу */
+  display: inline-block;
+  padding: 4px 12px;
+  background: linear-gradient(180deg, #F5F5F5 0%, #E0E0E0 100%);
+  color: #222;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(10px) translateX(12px);
+  z-index: 2;
+  position: relative;
 }
 
-/* Кнопка подсказки */
-.infoButton {
-  color: #a0aec0;
-  transition: color 0.2s;
-}
+/* Поле ввода с рваными краями */
+.inputField {
+  width: 100%;
+  padding: 16px;
+  background: rgba(33, 33, 33, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  backdrop-filter: blur(2px);
 
-.infoButton:hover {
-  color: white;
+  /* Рваные боковины через clip-path */
+  clip-path: polygon(
+    0% 0%, 
+    100% 0%,
+    100% 10%,
+    98% 12%,
+    100% 18%,
+    98% 20%,
+    100% 30%,
+    98% 32%,
+    100% 40%,
+    98% 42%,
+    100% 50%,
+    98% 52%,
+    100% 60%,
+    98% 62%,
+    100% 70%,
+    98% 72%,
+    100% 80%,
+    98% 82%,
+    100% 90%,
+    98% 92%,
+    100% 100%,
+    0% 100%,
+    0% 90%,
+    2% 88%,
+    0% 82%,
+    2% 80%,
+    0% 70%,
+    2% 68%,
+    0% 60%,
+    2% 58%,
+    0% 50%,
+    2% 48%,
+    0% 40%,
+    2% 38%,
+    0% 30%,
+    2% 28%,
+    0% 20%,
+    2% 18%,
+    0% 10%,
+    2% 8%,
+    0% 0%
+  );
 }
 
 /* Подсказка */
@@ -27,33 +81,21 @@
   top: 100%;
   right: 0;
   z-index: 10;
-  width: 256px; /* ширина подсказки */
+  width: 256px;
   padding: 12px;
   font-size: 0.875rem;
-  background-color: #2d3748; /* темный фон */
+  background-color: #2d3748;
   color: white;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* тень */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Стили инпута */
-.inputField {
-  width: 100%;
-  background-color: #1a202c; /* темный фон */
-  border: 1px solid #2d3748; /* светло-серый бордер */
+/* Кнопка с иконкой */
+.infoButton {
+  color: #a0aec0;
+  transition: color 0.2s;
+}
+
+.infoButton:hover {
   color: white;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.inputField:focus {
-  border-color: #c53030; /* красная рамка при фокусе */
-}
-
-/* Фокусировка на инпуте */
-.inputField:focus-visible {
-  outline: 2px solid #c53030;
 }
